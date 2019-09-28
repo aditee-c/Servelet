@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>LoginWebApp</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+<!-- Servelet context initialization paramater info-->
+  <context-param>
+  <param-name>jdbcDriver</param-name>
+  <param-value>com.mysql.jdbc.Driver</param-value>
+  </context-param>
+ 
+  <context-param>
+  <param-name>jdbcUrl</param-name>
+  <param-value>jdbc:mysql://localhost:3306/aditee</param-value>
+  </context-param>
+ 
+  <context-param>
+  <param-name>dbUser</param-name>
+  <param-value>root</param-value>
+  </context-param>
+  
+  <context-param>
+  <param-name>dbPassword</param-name>
+  <param-value>root</param-value>
+  </context-param>
+  
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>LoginServelet</display-name>
+    <servlet-name>LoginServelet</servlet-name>
+    <servlet-class>com.zensar.login.LoginServelet</servlet-class>
+   <!--  <init-param> servelet config initilization paramater info 
+    <param-name></param-name>
+    <param-value></param-value>
+    </init-param>
+ --> 
+ <!--  <init-param> servelet config initilization paramater info if name and value is different then create new initparam
+    <param-name></param-name>
+    <param-value></param-value>
+    </init-param>
+ -->  
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServelet</servlet-name>
+    <url-pattern>/checkUser</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>WelcomeServelt</display-name>
+    <servlet-name>WelcomeServelt</servlet-name>
+    <servlet-class>com.zensar.login.WelcomeServelt</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WelcomeServelt</servlet-name>
+    <url-pattern>/Welcome</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchServelet</display-name>
+    <servlet-name>SearchServelet</servlet-name>
+    <servlet-class>com.zensar.login.SearchServelet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchServelet</servlet-name>
+    <url-pattern>/searchInfo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AmazonSearch</display-name>
+    <servlet-name>AmazonSearch</servlet-name>
+    <servlet-class>com.zensar.login.AmazonSearch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AmazonSearch</servlet-name>
+    <url-pattern>/AmazonSearch</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProductServelet</display-name>
+    <servlet-name>ProductServelet</servlet-name>
+    <servlet-class>com.zensar.products.ProductServelet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductServelet</servlet-name>
+    <url-pattern>/product</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutServalet</display-name>
+    <servlet-name>LogoutServalet</servlet-name>
+    <servlet-class>com.zensar.logout.LogoutServalet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServalet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping><!-- 
+  <session-config>
+  <session-timeout>1</session-timeout>
+  </session-config>  -->
+</web-app>
