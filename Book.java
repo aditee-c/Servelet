@@ -6,6 +6,7 @@ class Book{
 		this.bookId= bookId;
 	}
 	public setBookId(int bookId){
+		System.out.println("Book Id is set");
 		return bookId;
 	}
 	
